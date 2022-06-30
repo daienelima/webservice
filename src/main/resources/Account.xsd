@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.soap.com/account" elementFormDefault="qualified">
+
+    <xs:element name="accountRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="filtro">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="accountResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" name="listAccounts">
+                    <xs:complexType>
+                       <xs:sequence>
+                           <xs:element maxOccurs="unbounded" minOccurs="0" name="account">
+                               <xs:complexType>
+                                   <xs:sequence>
+                                       <xs:element name="id" type="xs:int"/>
+                                       <xs:element name="accountNumber" type="xs:string"/>
+                                       <xs:element name="name" type="xs:string"/>
+                                       <xs:element name="cpf" type="xs:string"/>
+                                   </xs:sequence>
+                               </xs:complexType>
+                           </xs:element>
+                       </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
